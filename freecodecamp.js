@@ -11,7 +11,7 @@ function titleCase(str) {
 console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"))
 */
 
-
+/*
 //Slice and Splice
 function frankenSplice(arr1, arr2, n) {
     let arrComb = [...arr2]
@@ -19,3 +19,11 @@ function frankenSplice(arr1, arr2, n) {
     return arrComb;
   }
  console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1))
+*/
+
+//Falsy Bouncer
+function bouncer(arr) {
+    return arr.filter(Boolean);
+  }
+  
+  console.log(bouncer([7, "ate", "", false, 9]));
