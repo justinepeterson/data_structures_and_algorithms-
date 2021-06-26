@@ -32,6 +32,7 @@ function bouncer(arr) {
 */
 
 //Where do I Belong
+/*
 function getIndexToIns(arr, num) {
     //sort the array arr
     //find the the index of the element that is less than numm
@@ -58,4 +59,4 @@ function getIndexToIns(arr, num) {
   }
   
   console.log(getIndexToIns([2, 5, 10], 15));
-  
+  */
