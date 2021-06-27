@@ -62,6 +62,7 @@ function getIndexToIns(arr, num) {
   */
 
 
+  /*
 //Mutations
 function mutation(arr) {
     let test = arr[1].toLowerCase();
@@ -71,3 +72,17 @@ function mutation(arr) {
     }
     return true;
   }
+  */
+
+//Chunky Monkey
+  function chunkArrayInGroups(arr, size) {
+    let newArr = [];
+    let i = 0;
+    while(i < arr.length){
+      newArr.push(arr.slice(i, i+size))
+      i += size;
+    }
+    return newArr
+  }
+  
+chunkArrayInGroups(["a", "b", "c", "d"], 2)
