@@ -62,27 +62,64 @@ function getIndexToIns(arr, num) {
   */
 
 
-  /*
+/*
 //Mutations
 function mutation(arr) {
-    let test = arr[1].toLowerCase();
-    let target = arr[0].toLowerCase();
-    for (let i = 0; i < test.length; i++) {
-      if (target.indexOf(test[i]) < 0) return false;
-    }
-    return true;
+  let test = arr[1].toLowerCase();
+  let target = arr[0].toLowerCase();
+  for (let i = 0; i < test.length; i++) {
+    if (target.indexOf(test[i]) < 0) return false;
   }
-  */
+  return true;
+}
+*/
 
+/*
 //Chunky Monkey
-  function chunkArrayInGroups(arr, size) {
-    let newArr = [];
-    let i = 0;
-    while(i < arr.length){
-      newArr.push(arr.slice(i, i+size))
-      i += size;
-    }
-    return newArr
+function chunkArrayInGroups(arr, size) {
+  let newArr = [];
+  let i = 0;
+  while(i < arr.length){
+    newArr.push(arr.slice(i, i+size))
+    i += size;
   }
-  
+  return newArr
+}
+ 
 chunkArrayInGroups(["a", "b", "c", "d"], 2)
+*/
+/*
+class Bird {
+  constructor(name) {
+    this.name = name;
+    this.numLegs = 2;
+  }
+}
+
+let ownProps = [];
+
+let duck = new Bird('justine')
+
+for (let property in duck) {
+
+  console.log(property)
+
+}
+
+var objectOne = {x: 5}
+
+*/
+
+function sumAll(arr) {
+  //extract the two numbers 
+  //check which one is larger than the other
+  //use for loop to add all the numbers in between
+  let sortedArr = arr.sort((a,b)=>a-b)
+  let sum = 0;
+  for(let i = sortedArr[0]; i<=sortedArr[1]; i++){
+    sum  += i;
+  }
+  return sum;
+}
+
+console.log(sumAll([10, 4]));
