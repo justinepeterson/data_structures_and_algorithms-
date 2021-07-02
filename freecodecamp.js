@@ -109,7 +109,7 @@ for (let property in duck) {
 var objectOne = {x: 5}
 
 */
-
+/*
 function sumAll(arr) {
   //extract the two numbers 
   //check which one is larger than the other
@@ -123,3 +123,21 @@ function sumAll(arr) {
 }
 
 console.log(sumAll([10, 4]));
+*/
+
+/*
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+*/
+
+//Diff Two Arrays
+function diffArray(arr1, arr2) {
+
+  return arr1.concat(arr2).filter(el => !arr1.includes(el) || !arr2.includes(el));
+}
+
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
