@@ -134,6 +134,7 @@ function diffArray(arr1, arr2) {
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 */
 
+/*
 //Diff Two Arrays
 function diffArray(arr1, arr2) {
 
@@ -141,3 +142,19 @@ function diffArray(arr1, arr2) {
 }
 
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+*/
+
+
+function destroyer(arr) {
+  let valsToRemove = Object.values(arguments).slice(1);
+  for(let i = 0; i < arr.length; i++){
+    for(let j = 0; j < valsToRemove.length; j++){
+      if(arr[i]===valsToRemove[j]){
+         delete arr[i]
+      }
+    }
+  }
+  return arr.filter(el=>el!==null)
+}
+
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
