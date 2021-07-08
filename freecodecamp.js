@@ -144,7 +144,7 @@ function diffArray(arr1, arr2) {
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 */
 
-
+/*
 function destroyer(arr) {
   let valsToRemove = Object.values(arguments).slice(1);
   for(let i = 0; i < arr.length; i++){
@@ -158,3 +158,20 @@ function destroyer(arr) {
 }
 
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+*/
+
+function whatIsInAName(collection, source) {
+  // Only change code below this line
+  let srcKeys = Object.keys(source)
+  return collection.filter((obj)=>{
+    for(let i =0; i < srcKeys.length; i++){
+      if(!obj.hasOwnProperty(srcKeys[i]) || obj[srcKeys[i]] !== source[srcKeys[i]]){
+        return false
+      }
+    }
+    return true
+  })
+  // Only change code above this line
+}
+
+console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }))
