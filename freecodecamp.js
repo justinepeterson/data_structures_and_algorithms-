@@ -160,6 +160,7 @@ function destroyer(arr) {
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
 */
 
+/*
 function whatIsInAName(collection, source) {
   // Only change code below this line
   let srcKeys = Object.keys(source)
@@ -175,3 +176,14 @@ function whatIsInAName(collection, source) {
 }
 
 console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }))
+*/
+
+function spinalCase(str) {
+  return str.match(/[A-Z]?[a-z]+/g).join('-').toLowerCase()
+}
+
+console.log(spinalCase('This Is Spinal Tap'));
+console.log(spinalCase("thisIsSpinalTap"))
+console.log(spinalCase("The_Andy_Griffith_Show"))
+console.log(spinalCase("Teletubbies say Eh-oh"))
+console.log(spinalCase("AllThe-small Things"))
