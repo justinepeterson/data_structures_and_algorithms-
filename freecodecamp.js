@@ -178,6 +178,7 @@ function whatIsInAName(collection, source) {
 console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }))
 */
 
+/*
 function translatePigLatin(str) {
    // Create variables to be used
    var pigLatin = "";
@@ -201,3 +202,19 @@ function translatePigLatin(str) {
 }
 
 console.log(translatePigLatin("glove"))
+*/
+
+/*
+
+function myReplace(str, before, after) {
+  if(/^[A-Z]/.test(before)){
+    after = after[0].toUpperCase() + after.substr(1)
+  }else{
+    after = after[0].toLowerCase() + after.substr(1)
+  }
+  return str.replace(before,after)
+}
+
+console.log(myReplace("His name is Tom", "Tom", "john"));
+
+*/
