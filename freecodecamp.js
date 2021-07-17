@@ -218,3 +218,19 @@ function myReplace(str, before, after) {
 console.log(myReplace("His name is Tom", "Tom", "john"));
 
 */
+
+/*
+function fearNotLetter(str) {
+  let first = str.charCodeAt(0);
+  let last = str.charCodeAt(str.length - 1)
+  for(let i = first; i <= last; i++){
+    let codeLetter = String.fromCharCode(i)
+    let strLetter = str[i-first]
+    if(codeLetter !== strLetter){
+      return codeLetter
+    }
+  }
+}
+
+console.log(fearNotLetter("abce"));
+*/
