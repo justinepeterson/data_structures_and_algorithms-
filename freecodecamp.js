@@ -234,3 +234,20 @@ function fearNotLetter(str) {
 
 console.log(fearNotLetter("abce"));
 */
+
+
+function uniteUnique(arr) {
+  let arrays = Object.keys(arguments).map((key) => arguments[key])
+  for(let i = 0; i< arrays.length; i++){
+    arrays[i].forEach(element => {
+      if(!arr.includes(element)){
+        arr.push(element)
+      }
+    })
+  }
+  return arr
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+uniteUnique([1, 2, 3], [5, 2, 1]);
+uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
