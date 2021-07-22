@@ -235,7 +235,7 @@ function fearNotLetter(str) {
 console.log(fearNotLetter("abce"));
 */
 
-
+/*
 function uniteUnique(arr) {
   let arrays = Object.keys(arguments).map((key) => arguments[key])
   for(let i = 0; i< arrays.length; i++){
@@ -251,3 +251,27 @@ function uniteUnique(arr) {
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 uniteUnique([1, 2, 3], [5, 2, 1]);
 uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
+*/
+
+function sumPrimes(num) {
+  let sum = 0;
+  function isPrime(num) {
+    if(num < 2) return false;
+    for(var i = 2; i < num; i++) {
+      if(num%i==0)
+        return false;
+    }
+    return true;
+  }
+  
+  for(var i = 0; i <= num; i++){
+    if(isPrime(i)){
+      sum+=i
+    }
+  }
+  console.log(sum)
+}
+
+sumPrimes(977);
+
+
