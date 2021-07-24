@@ -252,7 +252,7 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 uniteUnique([1, 2, 3], [5, 2, 1]);
 uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
 */
-
+/*
 function sumPrimes(num) {
   let sum = 0;
   function isPrime(num) {
@@ -274,4 +274,16 @@ function sumPrimes(num) {
 
 sumPrimes(977);
 
+*/
 
+
+function palindrome(str) {
+  let newStr = str.toLowerCase().replace(/[^a-z\d]/g,"")
+  console.log(str)
+  console.log(newStr)
+  return newStr.split('').reverse().join("");
+}
+
+
+
+console.log(palindrome("1 eye for of 1 eye."));
