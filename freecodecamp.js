@@ -288,7 +288,7 @@ function palindrome(str) {
 
 console.log(palindrome("1 eye for of 1 eye."));
 */
-
+/*
 function dropElements(arr, func) {
   let newArr = [...arr]
    arr.some(el=>{
@@ -302,3 +302,18 @@ function dropElements(arr, func) {
 }
 
 console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}))
+*/
+
+function steamrollArray(arr) {
+  let flatArr = [];
+  for(let i = 0; i<arr.length; i++){
+    if(Array.isArray(arr[i])){
+      flatArr.push(...steamrollArray(arr[i]))
+    }else{
+      flatArr.push(arr[i])
+    }
+  }
+  return flatArr
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
