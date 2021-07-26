@@ -276,7 +276,7 @@ sumPrimes(977);
 
 */
 
-
+/*
 function palindrome(str) {
   let newStr = str.toLowerCase().replace(/[^a-z\d]/g,"")
   console.log(str)
@@ -287,3 +287,18 @@ function palindrome(str) {
 
 
 console.log(palindrome("1 eye for of 1 eye."));
+*/
+
+function dropElements(arr, func) {
+  let newArr = [...arr]
+   arr.some(el=>{
+     if(!func(el)){
+       newArr.splice(0,1)
+     }else{
+       return true
+     }
+   })
+   return newArr
+}
+
+console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}))
