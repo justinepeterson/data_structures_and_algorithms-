@@ -304,6 +304,7 @@ function dropElements(arr, func) {
 console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}))
 */
 
+/*
 function steamrollArray(arr) {
   let flatArr = [];
   for(let i = 0; i<arr.length; i++){
@@ -317,3 +318,16 @@ function steamrollArray(arr) {
 }
 
 console.log(steamrollArray([1, [2], [3, [[4]]]]));
+*/
+
+/*
+function binaryAgent(str) {
+  return str.split(" ").map(function(elem) {
+    //parseInt converts binary digit to a number
+    //fromCharCode returns a character in relation to the number passed in it.
+    return String.fromCharCode(parseInt(elem, 2))
+  }).join("")
+}
+
+console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"))
+*/
