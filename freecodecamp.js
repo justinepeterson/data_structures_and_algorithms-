@@ -332,7 +332,7 @@ function binaryAgent(str) {
 console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"))
 */
 
-
+/*
 function truthCheck(collection, pre) {
   let returnValue = true
   collection.some(el=>{
@@ -349,3 +349,22 @@ function truthCheck(collection, pre) {
 
 truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")
 truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")
+*/
+
+
+function orbitalPeriod(arr) {
+  let newArr = []
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  arr.map(element=>{
+     let period = Math.round(2 * Math.PI * Math.sqrt(Math.pow(earthRadius + element.avgAlt,3)/(GM)))
+     newArr.push({
+       name: element.name,
+       orbitalPeriod: period
+     })
+  })
+  
+  return newArr;
+}
+
+console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]))
