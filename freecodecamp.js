@@ -61,7 +61,6 @@ function getIndexToIns(arr, num) {
   console.log(getIndexToIns([2, 5, 10], 15));
   */
 
-
 /*
 //Mutations
 function mutation(arr) {
@@ -385,3 +384,149 @@ function convertToRoman(num) {
 
 console.log(convertToRoman(36));
 */
+/*
+function checkCashRegister(price, cash, cid) {
+  const UNIT_AMOUNT = {
+    PENNY: 0.01,
+    NICKEL: 0.05,
+    DIME: 0.1,
+    QUARTER: 0.25,
+    ONE: 1.0,
+    FIVE: 5.0,
+    TEN: 10.0,
+    TWENTY: 20.0,
+    "ONE HUNDRED": 100.0,
+  };
+
+  //calculate total money in cash drawer
+  let totalCID = 0;
+  cid.forEach((currency) => {
+    totalCID += currency[1];
+  });
+  totalCID = totalCID.toFixed(2);
+
+  //calculate change
+  let changeToGive = cash - price;
+  const changeArray = [];
+
+  //calculate return currency
+  if (changeToGive > totalCID) {
+    return { status: "INSUFFICIENT_FUNDS", change: changeArray };
+  } else if (changeToGive.toFixed(2) === totalCID) {
+    return { status: "CLOSED", change: cid };
+  } else {
+    cid = cid.reverse();
+    for (let elem of cid) {
+      let temp = [elem[0], 0];
+      while (changeToGive >= UNIT_AMOUNT[elem[0]] && elem[1] > 0) {
+        temp[1] += UNIT_AMOUNT[elem[0]];
+        elem[1] -= UNIT_AMOUNT[elem[0]];
+        changeToGive -= UNIT_AMOUNT[elem[0]];
+        changeToGive = changeToGive.toFixed(2);
+      }
+      if (temp[1] > 0) {
+        changeArray.push(temp);
+      }
+    }
+  }
+}
+
+checkCashRegister(19.5, 20, [
+  ["PENNY", 1.01],
+  ["NICKEL", 2.05],
+  ["DIME", 3.1],
+  ["QUARTER", 4.25],
+  ["ONE", 90],
+  ["FIVE", 55],
+  ["TEN", 20],
+  ["TWENTY", 60],
+  ["ONE HUNDRED", 100],
+]);
+
+*/
+
+function rot13(str) {
+  let reference = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  let decodeStr = [];
+  str.split("").forEach((char) => {
+    if (reference.indexOf(char) === -1) {
+      decodeStr.push(char);
+    } else if (reference.indexOf(char) > 13) {
+      if (char == char.toUpperCase()) {
+        decodeStr.push(
+          reference[reference.indexOf(char) - 13].toLocaleUpperCase()
+        );
+      } else {
+        decodeStr.push(
+          reference[reference.indexOf(char) - 13].toLocaleLowerCase()
+        );
+      }
+    } else {
+      if (char == char.toUpperCase()) {
+        decodeStr.push(
+          reference[reference.indexOf(char) + 13].toLocaleUpperCase()
+        );
+      } else {
+        decodeStr.push(
+          reference[reference.indexOf(char) + 13].toLocaleLowerCase()
+        );
+      }
+    }
+  });
+  console.log(decodeStr.join(""));
+}
+
+rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.");
